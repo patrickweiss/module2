@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>{{course.title}}</h1>
+  <hr class="my-4" />
+  <p><span><img src="{{course.courseImg}}" alt="{{course.title}}s profile picture"></span>
+</p>
+  <p>dates: from {{course.startDate}} to {{course.endDate}}</p>
+
+  <p>{{course.description}}</p>
+  <hr class="my-4" />
+
+  <p>lead teacher: {{course.leadTeacher}}</p>
+  <p>TA: {{course.TAs}}</p>
+  <p>students</p>
+  <ul>
+  {{#each course.students}}
+    <li>{{this.name}}</li>
+  {{/each}}
+  </ul>
+  <hr class="my-4" />
+  <div id="map"></div>
+
+  <script type='text/javascript'>startMap([{{course.location.coordinates}}], '{{course.title}}');</script>
+  <hr class="my-4" />
+  <a href="/courses">Return</a>
+</div>
