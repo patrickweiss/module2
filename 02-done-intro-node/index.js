@@ -34,7 +34,7 @@ class SortedList {
 
   average() {
     if(!this.length){
-      throw newError ("EmptySortedList");
+      throw new Error ("EmptySortedList");
     }
     return this.sum()/this.length;
   }
