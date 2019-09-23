@@ -21,7 +21,8 @@ require('dotenv').config();
 // clientId and clientSecret are the variable names we gave in .env file (don't forget to create .env file!!!)
 //      |           |
 //      --------------------------------------------|
-//                                                  |
+//    
+//console.log(process.env);                                            
 var clientId = process.env.clientId // <------------|
     clientSecret = process.env.clientSecret // <----|
     access_token = '';
@@ -30,7 +31,7 @@ var spotifyApi = new SpotifyWebApi({
   clientId : clientId,
   clientSecret : clientSecret
 });
-
+//console.log(spotifyApi);
 // Retrieve an access token.
 spotifyApi
   .clientCredentialsGrant()
