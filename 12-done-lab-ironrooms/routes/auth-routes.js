@@ -31,6 +31,7 @@ router.post('/register', (req, res, next) => {
       res.redirect('/login');
       return;
     }
+    console.log(`/register ${userEmail} ${userPassword} ${userFullName}`);
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPassword = bcrypt.hashSync(userPassword, salt);

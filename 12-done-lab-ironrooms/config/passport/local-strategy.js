@@ -8,6 +8,8 @@ passport.use(new LocalStrategy({
   usernameField: 'email' // <== this step we take because we don't use username but email to register and login users
   // if we use username we don't have to put this object:{ usernameField: 'email }
 },(email, password, next) => {
+  console.log(`/register ${email} ${password}`);
+
   User.findOne({ email })
   .then(userFromDb => {
     if(!userFromDb){

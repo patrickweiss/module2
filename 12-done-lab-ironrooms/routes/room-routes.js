@@ -26,7 +26,7 @@ router.post('/create-room', fileUploader.single('imageUrl'),(req, res, next) => 
   Room.create({
     name,
     description,
-    imageUrl: req.file.secure_url,
+    imageUrl: "",
     owner: req.user._id
   })
   .then( newRoom => {

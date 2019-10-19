@@ -9,6 +9,8 @@ const punkAPI = new PunkAPIWrapper();
 // TO USE PARTIALS, WE HAVE TO REGISTER THEM
 hbs.registerPartials(__dirname + '/views/partials');
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
